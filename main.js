@@ -100,20 +100,96 @@ In this case, the space is at position 6.*/
 // ARRAYS - variables that are used to store multiple values
 //Old and not used anymore method
 const numbers = new Array(1, 2, 3, 4, 5);
+const namez = new Array("Feddy", "Frezar", "Ng", "Mk");
+console.log(namez);
 console.log(numbers);
 // Easier and used nowadays
 const fruits = ["apples", "oranges", "bananas", "grapes"];
+const namezz = ["Feddy", "Frezar", "Ng", "Mk"];
+console.log(namezz);
+
 console.log(fruits);
 // We can have more than one data type in  an Array
 const allDataTypes = ["string", true, 20, "#"];
 console.log(allDataTypes);
 // Properties of Arrays
 //Lets' access orange from fruits then 20 from allDataTypes
+console.log(namezz[0]);
 console.log(fruits[1]);
 console.log(allDataTypes[2]);
 console.log(fruits);
 // Let's push(the end)  and unshift(the beggining) new items to the fruits Array
 fruits.push("mango"); //push adds mango to the end of the Array
+namezz.push("Mona");
+namezz.pop();
+console.log(namezz);
+
+// Array.pop(),,One,, real life example
+//An array of orders in a restaurant
+const orders = ["burger", "pizza", "pasta", "salad"];
+// The last order (salad) is ready to be served , so let's remove it
+const servedOrder = orders.pop();
+console.log(servedOrder);
+console.log(orders);
+
+/* Array.pop(),,Two,, If you’re building an application with an (Undo feature),
+ you can use pop() to remove the most recent action from the list of actions
+performed.*/
+//// Array of actions the user has performed
+const actions = ["Write", "Save", "Bold", "Underline"];
+// The user decides to undo the last action ("Underline")
+const undoneAction = actions.pop();
+console.log(undoneAction);
+console.log(actions);
+
+//Array.pop(),,Three,,undo multiple times using pop()
+// Array of actions the user has performed
+const actionz = ["write", "save", "bold", "underline", "italic"];
+const undoneActionz = []; //This is where will store the undone actions
+//Undo the last 3 actions
+undoneActionz.push(actionz.pop()); //Undo "italic"
+undoneActionz.push(actionz.pop()); //Undo "underline"
+undoneActionz.push(actionz.pop()); //Undo "bold"
+console.log(undoneActionz);
+console.log(actionz);
+
+//Array.pop(),,Forth eg using LOOPS,,undo multiple times using pop()
+//List of actions
+const actionzz = [
+  "Set alarm",
+  "Check emails",
+  "Social media post",
+  "Call her boss",
+  "Order coffee",
+];
+// We want to undo the last 3 actions
+const numberOfUndos = 3;
+const undoneActions = [];
+
+for (let i = 0; i < numberOfUndos; i++) {
+  undoneActions.push(actionzz.pop());
+}
+console.log(undoneActions);
+console.log(actionzz);
+
+//Array.pop(),,Fifth undo bulky actions
+const actionsz = [
+  { action: "Write", timestamp: "10:00 AM" },
+  { action: "Save", timestamp: "10:05 AM" },
+  { action: "Bold", timestamp: "10:10 AM" },
+  { action: "Underline", timestamp: "10:15 AM" },
+];
+//Undo the last 2 actions
+const undoneActionsz = actionsz.splice(-2); //Removes and returns the last 2 actions
+console.log(undoneActionsz);
+console.log(actionsz);
+
+//Splice().... going deeper
+//Add, Removes and Replace elements in an array at any position
+// Syntax
+/* Array.splice(startIndex, deleteCount, item1, item2, ...); */
+//Removing Elements
+
 console.log(fruits);
 fruits.unshift("guava"); //unshift adds guava at the start of the Array
 console.log(fruits);
