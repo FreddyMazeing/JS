@@ -20,6 +20,8 @@ console.log(thePort);
 const oneIntoZero = undefined;
 console.log(oneIntoZero);
 
+//-------------------------------------------------------------------------------------------------
+
 // STRINGS
 const name = "Freddy";
 const age = 26;
@@ -97,6 +99,8 @@ console.log(myName); //Here a method is inside another method
 in the string, which is the separator between the first and last name. 
 In this case, the space is at position 6.*/
 
+//-------------------------------------------------------------------------------------------------
+
 // ARRAYS - variables that are used to store multiple values
 //Old and not used anymore method
 const numbers = new Array(1, 2, 3, 4, 5);
@@ -123,6 +127,8 @@ fruits.push("mango"); //push adds mango to the end of the Array
 namezz.push("Mona");
 namezz.pop();
 console.log(namezz);
+
+//-----------------------------------------------------------------------------------------------
 
 // Array.pop(),,One,, real life example
 //An array of orders in a restaurant
@@ -184,11 +190,36 @@ const undoneActionsz = actionsz.splice(-2); //Removes and returns the last 2 act
 console.log(undoneActionsz);
 console.log(actionsz);
 
-//Splice().... going deeper
+//---------------------------------------------------------------------------------------
+
+//SPLICE    Splice().... going deeper
 //Add, Removes and Replace elements in an array at any position
 // Syntax
 /* Array.splice(startIndex, deleteCount, item1, item2, ...); */
-//Removing Elements
+
+//1.REMOVING ELEMENTS
+const fruitss = ["Apple", "Bananaz", "Mangoes", "Grapes", "Guavas", "Avocados"];
+fruitss.splice(2, 3); //This says Start at index 2 and remove 3 items
+console.log(fruitss); //Returnds ["Apple", "Bananaz","Avocados"]
+
+//2.ADDING ELEMENTS
+const fruitszz = [
+  "Apple",
+  "Bananaz",
+  "Mangoes",
+  "Grapes",
+  "Guavas",
+  "Avocados",
+];
+fruitszz.splice(1, 0, "Lemons", "RedBerries"); // Add "Lemons" and "RedBerries" at index 1
+// without removing any item
+console.log(fruitszz);
+
+//3.REPLACING ELEMENTS
+fruitszz.splice(0, 1, "Green Apple");
+console.log(fruitszz);
+
+//-----------------------------------------------------------------------------------------------
 
 console.log(fruits);
 fruits.unshift("guava"); //unshift adds guava at the start of the Array
@@ -200,8 +231,10 @@ console.log(fruits);
 console.log(Array.isArray(fruits));
 console.log(fruits.indexOf("guava"));
 
+//------------------------------------------------------------------------------------------------
+
 // OBJECT LITERALS
-//it all data types, arrays, strings, even nested objects the = is replaced by :
+//it's all data types, arrays, strings, even nested objects the = is replaced by :
 const person = {
   firstName: "Freddy", //String
   lastName: "Mazenge", //String
@@ -240,7 +273,7 @@ console.log(lastName);
 console.log(city);
 // Let's add a property to our address
 person.email = "freddymaz98@gmail.com";
-person.favouriteMoviesSeries = "Rings of Power";
+person.favouriteMoviesSeries = "Dune";
 person.favouriteAnimations = "Dragon Ball & Naruto";
 person.religion = "Christianity";
 person.siblings = ["Frezar", "Monalisa", "Makanaka", "Nigel", "Agnes", "Amina"];
@@ -301,6 +334,8 @@ FullStack)..we send and receive data in json format...it is similar to object li
 // Say we want to convert the todos to Json, ready to sen it to a server:
 const todoJSON = JSON.stringify(todos);
 console.log(todoJSON);
+
+//-----------------------------------------------------------------------------------------------
 
 //LOOPING
 // for loop
