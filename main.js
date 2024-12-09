@@ -248,7 +248,7 @@ const person = {
   },
 };
 
-//Destructuring [Objects]...extracting(accesing) elements from objects/arrays and assign
+//DESTRUCTURING [Objects]...extracting(accesing) elements from objects/arrays and assign
 //                          them to variables
 //Why we need destructuring....accessing properties/elements without repetation
 //.............................................................................................
@@ -261,7 +261,7 @@ const hobbies = person.hobbies[1];
 */
 
 //With destructuring (avoids repetation),
-const { firstName, lastName, hobbies } = person; //we used just one line (easy and quick)
+const { firstName, lastName, hobbies } = person; //we used just one line (easy and quick) note {}
 //................................................................................................
 
 //Destructuring [Arrays]
@@ -274,8 +274,22 @@ const first = numberers[0];
 const second = numberers[1];
 
 //with destructuring
-const [firsst, seccond] = numbers; // we used just one line (easy and quick)
-
+const [firsst, seccond] = numbers; // we used just one line (easy and quick) note  []
+/*
+//ADDING NEW PROPERTIES TO AN OBJECT
+//................................................................................................
+//USING (Dot Notation)
+person.email = "frezlax98@gmail.com";
+//USING (Bracket Notation)
+person["email"] = "frezlax98@gmail.com";
+//Using Object.defineProperty
+Object.defineProperties(person, "email", {
+  value: "frezlax98@gmail.com",
+  writable: true, // Can the value be changed?
+  enumerable: true, //Will it show up in loops like for...in or Object.keys()?
+  configerable: true, //Can the property be deleted or redefined?
+});
+*/
 //................................
 console.log(
   person.firstName,
@@ -338,6 +352,8 @@ console.log(person.firstName, person.lastName, person.address);
 console.log(firstName);
 console.log(lastName);
 console.log(city); */
+
+//...............................................................................
 // Let's add a property to our address
 person.email = "freddymaz98@gmail.com";
 person.favouriteMoviesSeries = "Dune";
@@ -395,10 +411,11 @@ const todos = [
 ];
 console.log(todos);
 console.log(todos[1].text);
+
 /* json- is a data format used when sending & receiving data to a server (used in
 FullStack)..we send and receive data in json format...it is similar to object literals*/
 
-// Say we want to convert the todos to Json, ready to sen it to a server:
+// Say we want to convert the todos to Json, ready to send it to a server:
 const todoJSON = JSON.stringify(todos);
 console.log(todoJSON);
 
