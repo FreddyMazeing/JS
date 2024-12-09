@@ -247,6 +247,73 @@ const person = {
     state: "Gauteng",
   },
 };
+
+//Destructuring [Objects]...extracting(accesing) elements from objects/arrays and assign
+//                          them to variables
+//Why we need destructuring....accessing properties/elements without repetation
+//.............................................................................................
+//Without destructuring (repatation) , we have to use multiple lines (tiresome)
+/*
+const firstName = person.firstName;
+const age = person.age;
+const lastName = person.lastName;
+const hobbies = person.hobbies[1]; 
+*/
+
+//With destructuring (avoids repetation),
+const { firstName, lastName, hobbies } = person; //we used just one line (easy and quick)
+//................................................................................................
+
+//Destructuring [Arrays]
+//............................................................................
+//Chaining the results...here we are accessing all properties of an object at once
+const numberers = [10, 20, 30, 40];
+
+//without destructuring // we have to use multiple lines (tiresome)
+const first = numberers[0];
+const second = numberers[1];
+
+//with destructuring
+const [firsst, seccond] = numbers; // we used just one line (easy and quick)
+
+//................................
+console.log(
+  person.firstName,
+  person.lastName,
+  person.age,
+  person.hobbies[1],
+  person.address.state
+);
+
+const aPerson = {
+  name: "Freddy",
+  age: 25,
+  isStudent: true,
+  greet: function () {
+    console.log(`Hello , my name is ${this.name}`);
+  },
+};
+
+//ACCESSING objects: (Dot notation or Bracket notation)
+//...........................................................................
+console.log(aPerson.name);
+console.log(aPerson.age);
+console.log(aPerson.isStudent);
+console.log(aPerson.name);
+console.log(aPerson);
+
+//ADDING or Modifying properties: (Dot notation or Bracket notation)
+//.............................................................................
+aPerson.name = "Frezar";
+aPerson.age = "14";
+aPerson.isStudent = "false";
+console.log(aPerson.name);
+console.log(aPerson.age);
+console.log(aPerson.isStudent);
+console.log(aPerson.name);
+console.log(aPerson);
+console.log(aPerson);
+
 // Properties of Objects
 //first let's log the whole Object
 console.log(person);
@@ -263,14 +330,14 @@ console.log(person.hobbies[1]);
 console.log(person.firstName, person.lastName, person.age, person.hobbies);
 console.log(person.firstName, person.lastName, person.address);
 // Destructuring--pulling items out of the objects and use them as variables
-const {
+/*const {
   firstName,
   lastName,
   address: { city },
 } = person;
 console.log(firstName);
 console.log(lastName);
-console.log(city);
+console.log(city); */
 // Let's add a property to our address
 person.email = "freddymaz98@gmail.com";
 person.favouriteMoviesSeries = "Dune";
