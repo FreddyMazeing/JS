@@ -552,14 +552,6 @@ if (x > 5 && y > 10) {
 const yyx = 20;
 const coloss = yyx > 10 ? "red" : "blue";
 //......Nested Ternary operartors
-const myAge =
-  years > 10
-    ? "Old"
-    : years < 10
-    ? "Young"
-    : years >= 10
-    ? "very little"
-    : "small";
 const xx = 180;
 const color = xx > 10 ? "red" : "blue";
 /* Interpreting the code above....
@@ -593,8 +585,122 @@ function addNums(num1, num2) {
 // function calling & parsing num1 and num2
 console.log(addNums(40, 5));
 
+//.......................................................................
 // Arrow Functions
 const addNumz = (numz1, numz2) => {
   return numz1 + numz2;
 };
 console.log(addNumz(5, 6));
+
+//.......................................................................
+//Simplyed Version of a function
+const subNumbs = (nums1, nums2) => nums1 + nums2;
+console.log(subNumbs(5, 5));
+
+//.....................................................................
+
+//OOP---> Object Orianted Programming
+// We can create Objects using constructive functions with PROTOTYPES or CLASSES (They both do the sam thing)
+/*
+//PROTOTYPES.......................
+//.......................................................................
+//Constructor Function
+function Person(firssstName, lastNaame, dob) {
+  //the fuction should start with Capital latter
+  // function FnctnnName(property1,....){}
+  this.firssstName = firssstName;
+  this.lastNaame = lastNaame;
+  this.dob = new Date(dob);
+}
+//Let's add methods to this function object
+//Seperate methods by putting them inside a protoytpe
+Person.prototype.getBirthYear = function () {
+  return `${this.firssstName} ${this.lastNaame}`;
+};
+Person.prototype.getBirthYear = function () {
+  return this.dob.getFullYear();
+};
+
+//Instantiate object
+const perssson1 = new Person("John", "Doe", "4-3-1980");
+const perssson2 = new Person("Freddy", "Mazeing", "2-20-1998");
+console.log(perssson1);
+console.log(perssson2);
+console.log(perssson2.dob.getFullYear());
+//console.log(perssson2.dob.getDay());
+//console.log(perssson2.dob.getUTCMonth());
+console.log(perssson1.getBirthYear());
+console.log(perssson2.getFullName()); */
+
+//CLASSES.......................
+/*
+class Person {
+  constructor(initialName, surName, dobth) {
+    this.initialName = initialName;
+    this.surName = surName;
+    this.dobth = new Date(dobth);
+  }
+  getBirthhYear() {
+    return this.dobth.getFullYear();
+  }
+  getFullNames() {
+    return `${this.initialName} ${this.surName}`;
+  }
+}
+//Instantiate object
+const perssson1 = new Person("John", "Doe", "4-3-1980");
+const perssson2 = new Person("Freddy", "Mazeing", "2-20-1998");
+console.log(perssson1);
+console.log(perssson2);
+*/
+//...
+//...
+//...
+//...
+//...
+//...
+//...
+//
+
+//..............OOP[OBJECT ORIENTED PROGRAMMING (diving deeper)]
+// Objects: have propeties(data)  and  methods(functions)----that defines their behavior
+
+//KEY CONCEPTS ABOUT OOP
+
+// (1) OBJECTS---> a collection of related data and functions[a blueprint for a real-world entity]
+//e.g-------> Car(Object)---> Properties:[color, brand, material,shape e.t.c] ,
+//                       ---> Functions :[start(), drive(), carry()]
+
+//(2)  CLASSES---> a template for creating objects(provides a more structured way of creating objects)
+
+//(3)  CONSTRUCTOR---> a SPECIAL METHOD inside a CLASS (or a function in older syntax),
+//                ---> runs when an object is created
+//                ---> used to initialise object properties
+
+//(4)  IHERITANCE---> one class can INHERIT properties and functions from other classes
+//                ---> this allows us to  reuse code
+
+//(5)  ENCAPSULATION--->bundling properties & functions into a single unit(object)
+//                ---> this restrict access to some components in our code
+//                ---> this is done using PRIVATE FIELDS or METHODS
+
+//(6)  POLYMORPHISM---> objects can share methods from a parent class
+//                --->  however, the specific methods for objects have high priority over shared ones
+
+//(7)  PROTOTYPES ---> contained by every JS objects
+//                ---> it's often hidden
+//                ---> it allows methods & functions to be shared among objects
+//                ---> therefore it's the foundation of inheritence in JS
+
+//
+//..............IMPLEMENTING OOP
+//
+
+//...............CLASSES & PROTOTYPES
+//
+
+//
+//     PROTOTYPES---> In JavaScript, every object is linked to another object called its prototype.
+//               ---> Prototypes allow objects to share methods and properties.
+
+// Example of Prototype
