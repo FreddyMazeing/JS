@@ -422,11 +422,46 @@ console.log(todoJSON);
 //-----------------------------------------------------------------------------------------------
 
 //LOOPING
+
+//.....................................................
 // for loop
+//Initialization let i = 0; ... i is the variable used to track the # of iterations
+//Condition i <= 10 ...condition must be true for loop to continue
+//i++ ...increment value of i by 1 after each iteration
+//Code Block...prints value of i on each loop
+//Execution sequence : initialisation -> Condition -> Console Output -> Increments
 for (let i = 0; i <= 10; i++) {
   console.log(`For Loop Number: ${i}`);
 }
 
+//PRACTICAL EXAMPLES
+//....................................................................
+
+//Generating a Grocery List[1]
+const groceries = ["Milk", "Sugar", "Eggs", "Cheese", "Bread"];
+
+for (let i = 0; i < groceries.length; i++) {
+  console.log(`Item ${i + 1}: ${groceries[i]}`);
+}
+
+//Calculating Average Grades Of Students[1]
+const gradezz = [85, 90, 78, 92, 88, 76, 95]; //Students Grades
+
+let totalSum = 0; //variable for storing the total sum of the results
+
+for (let a = 0; a < gradezz.length; a++) {
+  totalSum += gradezz[a];
+}
+
+const averagge = totalSum / gradezz.length;
+
+console.log(`Total Grades: ${totalSum}`);
+console.log(`Number of Students: ${gradezz.length}`);
+console.log(`Average: ${averagge.toFixed(2)}`);
+
+//
+
+//.........................................................
 // while loop
 let w = 0;
 while (w < 10) {
@@ -511,7 +546,20 @@ if (x > 5 && y > 10) {
   console.log("x is more than 5 and y is more than 20");
 }
 
+//......................................................
 // The TERNARY OPERATOR
+//condition ? expressionIfTrue : expressionIfFalse;
+const yyx = 20;
+const coloss = yyx > 10 ? "red" : "blue";
+//......Nested Ternary operartors
+const myAge =
+  years > 10
+    ? "Old"
+    : years < 10
+    ? "Young"
+    : years >= 10
+    ? "very little"
+    : "small";
 const xx = 180;
 const color = xx > 10 ? "red" : "blue";
 /* Interpreting the code above....
