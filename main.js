@@ -752,7 +752,7 @@ console.log(dog2.describeDog()); //method has been reused : describeDo()
 //ADVANTAGES OF OOP
 // (a) Reusability---> Methods & Properties can be reused across objects
 // (b) Modurality ---> Code can be organised into smaller, logical parts
-// (c) Scalability---> Easier to add new features by creating new classed/ extending existing ones
+// (c) Scalability---> Easier to add new features by creating new classes/ extending existing ones
 // (d) Maintenance---> Encapsulation, bundles up objects, hence changes in one object don't affect
 //                ---> the other
 
@@ -802,3 +802,17 @@ Inheritance Flow:
  Dog overrides the makeSound method with its own implementation, so when you call 
  makeSound on a Dog instance, it uses the child class's version.
 */
+
+//.ENCAPSULATION....hides certain details  from users and show only necessary  parts
+
+class BankAccount {
+  #balance = 0; //Private Fields
+  constructor(accountHolder) {
+    this.accountHolder = accountHolder;
+  }
+
+  deposit(amount) {
+    this.#balance += amount;
+    return `Deposit ${amount}. Balance: ${this.#balance}`;
+  }
+}
