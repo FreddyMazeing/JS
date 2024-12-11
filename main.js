@@ -700,7 +700,105 @@ console.log(perssson2);
 //
 
 //
-//     PROTOTYPES---> In JavaScript, every object is linked to another object called its prototype.
+//   [A]  PROTOTYPES---> In JavaScript, every object is linked to another object called its prototype.
 //               ---> Prototypes allow objects to share methods and properties.
 
-// Example of Prototype
+// EXAMPLE OF PROTOTYPE IN ACTION
+
+//Constructor Function
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+//Add a method to the prototype
+Person.prototype.greet = function () {
+  return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+};
+//Create objects
+const person1 = new Person("Alice", 25);
+const person2 = new Person("Bob", 30);
+
+console.log(person1.greet()); //the greet method is shared among 2 objects(person1 & person2)
+console.log(person2.greet()); //this is done through the help of the prototype
+
+//
+//
+
+//
+//   [A]  CLASSES---> this is a modern way of implementing OOP in JS
+//               ---> more readable & organised way of writing code
+//               ---> they are twin brothers with prototypes (they do the same thing)
+
+// EXAMPLE OF CLASSES IN ACTION
+//
+class Dog {
+  constructor(color, length) {
+    this.color = color;
+    this.length = length;
+  }
+  describeDog() {
+    return `The dog has a ${this.color} color and it is ${this.length}m long`;
+  }
+}
+//Create objects
+const dog1 = new Dog("white", 2);
+const dog2 = new Dog("black", 1.9);
+
+console.log(dog1.describeDog()); //method has been reused : describeDo()
+console.log(dog2.describeDog()); //method has been reused : describeDo()
+
+//
+//
+//ADVANTAGES OF OOP
+// (a) Reusability---> Methods & Properties can be reused across objects
+// (b) Modurality ---> Code can be organised into smaller, logical parts
+// (c) Scalability---> Easier to add new features by creating new classed/ extending existing ones
+// (d) Maintenance---> Encapsulation, bundles up objects, hence changes in one object don't affect
+//                ---> the other
+
+//OOP Feature in ACTION
+
+//INHERITANCE............allows one class to inherit properties & methods from another.
+
+class Animal {
+  constructor(anim) {
+    this.anim = anim; // The anim property is initialized
+  }
+  makeSound() {
+    return `${this.anim} makes a sound.`; // Method that describes a generic animal sound
+  }
+}
+//extends keyword allowed  subclass Doggy() to inherit properties of parent class Animal()
+class Doggy extends Animal {
+  makeSound() {
+    return `${this.anim} barks.`;
+  }
+}
+const dog = new Doggy("Buddy");
+console.log(dog.makeSound());
+
+/*
+Key Points:
+1. Inheritance with extends:
+   When a class uses extends, it inherits the properties and methods from the parent class 
+  (in this case, Animal).
+
+2.Method Overriding:
+   The child class (Dog) can override methods of the parent class (Animal). 
+   The method in the child class is called instead of the parent class's method if it exists.
+
+3.Accessing Parent Class Methods:
+   The child class can still access the parent class's properties (like name) and 
+   methods (like makeSound) unless overridden.
+   
+4.Constructor Inheritance:
+  The child class inherits the constructor from the parent class, which is why we can pass
+  "Buddy" to the new Dog("Buddy") statement and initialize the name property. 
+  The constructor of the parent class is automatically called due to the extends relationship.
+
+
+Inheritance Flow:
+ Dog inherits from Animal → Dog gets the name property and the makeSound method from Animal.
+ Dog overrides the makeSound method with its own implementation, so when you call 
+ makeSound on a Dog instance, it uses the child class's version.
+*/
